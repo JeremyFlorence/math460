@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage{blindtext}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 460\\
+Assignment: Weekly \#11\\
+Due: 4/17/17\\
+
+\textbf{11.1} In the diagram below, the square $ABCD$ has side equal to 7 cm. The square $EFGH$ is inscribed in the square $ABCD$ in such a way that $AE=BF=CG=DH=$ 3 cm.
+
+\begin{figure}[htp]
+\includegraphics[scale=0.50]{"Screenshot from 2017-04-11 12-53-08".png}
+\end{figure}
+
+
+(a) Find the area of square $EFGH$.\\
+
+\TheSolution Notice that $AB=AE+EB$, $BC=BF+FC$, $CD=CG+GD$, $DA=DH+HA$. Thus as $AB=BC=CD=DA=7$ cm, and $AE=BF=CG=DH=3$ cm, we can see that $EB=FC=GD=HA=4$. Now by applying the Pythagorean Theorem we can compute the length of the side of $EFGH$:
+\[
+	\begin{split}
+	(EF)^2 &= 3^2+4^2\\
+	(EF)^2 &= 25\\
+		EF &= 5 \text{ cm}
+	\end{split}
+\]
+
+Therefore the area of $EFGH$ is $(5 \text{ cm})^2=25$ cm$^2$.\\
+
+(b) Find the radius of the small circle (assumed to be inscribed in the triangle $EBF$).\\
+(c) Assuming that the big circle is inscribed in the square $EFGH$, find the ratio of it's area to that of the smaller circle.\\
+
+\TheSolution
+
+\textbf{11.2} If the length of a major diagonal of a rectangular box is 1, prove that the total surface area of the box is at most 2.
+
+\textbf{11.3} Prove that the surface area in the problem \textbf{11.2} is exactly 2 if and only if the rectangular box is a cube.
+\end{document}

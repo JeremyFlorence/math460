@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 460\\
+Assignment: Weekly \#10\\
+Due: 4/10/17\\
+
+For each positive number $n$, let $a_n=\sum_{k=n}^{2n} \frac{1}{k}$.
+
+\textbf{10.1} Compute $a_n$ for $n=$ 1, 2, 3, and 4. give your answers in rational form (i.e. $\frac{a}{b}$).
+
+\TheSolution 
+
+\underline{$n=1$:} $$a_1=\sum_{k=1}^{2} \frac{1}{k}=1+\frac{1}{2}=\frac{3}{2}$$
+
+\underline{$n=2$:} $$a_2=\sum_{k=2}^{4}\frac{1}{k}=\frac{1}{2}+\frac{1}{3}+\frac{1}{4}=\frac{13}{12}$$
+
+\underline{$n=3$:} $$a_3=\sum_{k=3}^{6}\frac{1}{k}=\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\frac{1}{6}=\frac{19}{20}$$
+
+\underline{$n=4$:} $$a_4=\sum_{k=4}^{8}\frac{1}{k}=\frac{1}{4}+\frac{1}{5}+\frac{1}{6}+\frac{1}{7}+\frac{1}{8}=\frac{743}{840}$$\\
+
+\textbf{10.2} Prove that the sequence $a_1,a_2,a_3, ...$ is convergent.
+
+\Proof We want to show that $\{a_n\}$ is convergent. Hence it is sufficient to show that $\{a_n\}$ is bounded and monotone.
+
+First we will show that $\{a_n\}$ is monotonic. Specifically, we will show that $\{a_n\}$ is monotonic decreasing. Let $n \in \mathbb{N}$. We need to show that $a_{n+1} \leq a_n$. Thus it is sufficient to show that $0 \leq a_n-a_{n+1}$. Now notice that $$a_n=\sum_{k=n}^{2n} \frac{1}{k}$$ and $$a_{n+1}=\sum_{k=n+1}^{2(n+1)} \frac{1}{k}.$$
+
+Thus 
+\[
+    \begin{split}
+		a_n-a_{n+1} &= \sum_{k=n}^{2n} \frac{1}{k}-\sum_{k=n+1}^{2(n+1)} \frac{1}{k}\\
+						&= (\frac{1}{n}+\frac{1}{n+1}+...+\frac{1}{2n})-(\frac{1}{n+1}+\frac{1}{n+2}+...+\frac{1}{2n}+\frac{1}{2n+1}+\frac{1}{2n+2})\\	
+						&=\frac{1}{n}-\frac{1}{2n+1}-\frac{1}{2n+2}\\
+						&=\frac{1}{n}-\frac{2n+2-2n+1}{(2n+1)(2n+2)}\\
+						&=\frac{1}{n}-\frac{1}{(2n+1)(2n+2)}\\
+						&=\frac{(2n+1)(2n+2)-n}{n(2n+1)(2n+2)}.		
+	\end{split}
+\]
+
+Now observe that $(2n+1)(2n+2)>n$, so it follows that 
+$$a_n-a_{n+1}=\frac{(2n+1)(2n+2)-n}{n(2n+1)(2n+2)}>0.$$
+Hence $a_{n+1} \leq a_n$, and therefore $\{a_n\}$ is monotonic decreasing
+
+We will now show that $\{a_n\}$ is bounded. Thus we need to show that there exists $M \in \mathbb{R}^+$ so that $|a_n| \leq M$ for each $n \in \mathbb{N}$. Choose $M=\frac{3}{2}$, and let $n \in \mathbb{N}$. Now notice that as $a_1=M$, and $\{a_n\}$ is monotonic decreasing, $a_n \leq M$. Additionally, since $a_n$ is a sum of positive real numbers, it follows that $-M \leq 0 \leq a_n$. Therefore as $-M \leq a_n \leq M$, we can conclude that $|a_n| \leq M$, so $\{a_n\}$ is bounded.
+
+Therefore as we have shown that $\{a_n\}$ is monotonic and bounded, we can conclude that $a_n$ is convergent.\\
+
+
+\end{document}

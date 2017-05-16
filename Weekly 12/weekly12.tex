@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{amsfonts, amsmath}
+\usepackage[normalem]{ulem}
+\usepackage{blindtext}
+\usepackage[shortlabels]{enumitem}
+
+\newcounter{problem}
+\newcounter{solution}
+
+\newcommand\Problem{%
+  \stepcounter{problem}%
+  \textbf{\theproblem.}~%
+  \setcounter{solution}{0}%
+}
+
+\newcommand\TheSolution{%
+  \textbf{Solution:} %
+}
+
+\newcommand\Proof{%
+	\textbf{Proof:} %
+}
+
+\parindent 0in
+\parskip 1em
+
+\begin{document}
+Name: Jeremy Florence\\
+Course: Math 460\\
+Assignment: Weekly \#12\\
+Due: 4/24/17\\
+
+\textbf{12.1} To avoid paying a toll of \$2 on a direct road, Mr. Fred Cheaply first goes west 10 miles, then south 5 miles, then 30 miles west and finally 35 miles north. Fred’s old Hyundai gets 30 miles to the
+gallon and he can still buy gas for \$1.659 per gallon.
+
+\begin{enumerate}[(a)]
+\item How far out of his way is Fred going to avoid paying the \$2 toll?\\
+
+\TheSolution Observe that Fred is travelling north-west. Thus we must calculate the net distance traveled by Fred in the north and west directions:
+		$$d_{north}=35-5=30$$
+		$$d_{west}=10+30=40$$
+Now using Pythagorean's Theorem, we can calculate the distance of the direct road:
+		$$d_{direct}=\sqrt{30^2+40^2}=50$$
+Therefore by avoiding the \$2 toll, Fred travels a total distance of $10+5+30+35=80$ miles. Hence Fred is going $80-50=30$ miles out of his way in order to avoid the \$2 toll.
+\item On the basis of gas mileage his Hyundai gets and what he pays per gallon of gas, is Fred saving any money (and if so how much)?
+
+\TheSolution If Fred had taken the direct road he would have used $50/30=5/3$ gallons of gas. Thus the total cost of using the direct road would be:
+		$$cost_{direct}=(5/3) \cdot \$1.659+\$2=\$4.765.$$
+Now by not taking the direct road, Fred uses $80/30=8/3$ gallons of gas. Thus the cost of not taking the direct road is $$cost_{indirect}=(8/3) \cdot \$1.659=\$4.424.$$
+
+Therefore Fred saves $\$4.765-\$4.424=\$0.34$ by not taking the direct road.
+
+\end{enumerate}
+
+\textbf{12.2} Given that $a$, $b$ and $c$ are odd integers, prove that the equation
+										$$ax^2+bx+c=0$$
+cannot have a rational root (i.e. a root of the form $\frac{p}{q}$ where $p \in \mathbb{Z}$ and $q \in \mathbb{N}$.
+
+\emph{Hint: Consider $b^2-4ac$ mod 8.}
+
+\Proof Let $a,b$, and $c$ be odd integers so that $ax^2+bx+c=0$. Recall that a quadratic equation has rational roots if and only if there exists $d \in \mathbb{Z}$ so that $d^2=b^2-4ac$. Now notice that as $a,b$, and $c$ are odd, $b^2$ must be odd and $4ac$ must be even. Hence $b^2-4ac$ is odd, so $d$ must also be odd.
+
+\textbf{Claim:} For any odd integer $n$, $n^2 \equiv 1$ (mod 8)
+
+\textbf{Proof of Claim:} Let $n$ be an odd integer. We need to show that $8 \mid n^2-1$. Since $n$ is odd, there exists $k \in \mathbb{Z}$ so that $n=2k+1$. Thus
+\[
+	\begin{split}
+	n^2-1&=(2k+1)^2-1\\
+		&=4k^2+4k+1-1\\
+		&=4(k^2+k).
+	\end{split}
+\]
+Now notice that regardless of whether $k$ is even or odd, $k^2+k$ must be even. Hence there exists $j \in \mathbb{Z}$ so that $k^2+k=2j$, so $$n^2-1=4(k^2+k)=4(2j)=8j.$$
+Therefore we can conclude that $8 \mid n^2-1$, so $n^2 \equiv 1$ (mod 8).\\
+
+Now we know that $d^2 \equiv 1$ (mod 8), and also that $b^2 \equiv 1$ (mod 8). Next we will show that $-4ac \equiv 4$ (mod 8). Thus we will show that $8 \mid -4ac-4$. Notice that $ac$ is odd, so $ac+1$ must be even. That is, there exists some $k \in \mathbb{Z}$ so that $ac+1=2k$. Thus:
+\[
+	\begin{split}
+	-4ac-4&=-4(ac+1)\\
+		&=-4(2k)\\
+		&=8 \cdot -k
+	\end{split}
+\]
+so we can conclude that $-4ac \equiv 4$ (mod 8). Therefore $b^2+(-4ac) \equiv 1+4$ (mod 8), so $b^2-4ac \not \equiv 1$ (mod 8). Hence $b^2-4ac$ is not a square of some integer, so the equation $$ax^2+bx+c=0$$
+cannot have a rational root.
+\end{document}
